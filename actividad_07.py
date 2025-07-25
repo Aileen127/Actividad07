@@ -27,5 +27,43 @@ def area(base, altura): # 2.1
 def perimetro(l1,l2, l3, l4 ): # 2.2
     return l1 + l2 + l3 + l4
 # Inicio opcion 3
+def es_primo(numero):
+    if numero < 2:
+        print("Es primo")
+        for n in range(2, numero):
+            if numero % n == 0:
+                print("No es primo")
+# Inicio opcion 4
+def promedios_(nota): # 4
+    promedio = sum(nota) / len(nota)
+    return promedio
+def promedio_mayor(nota): # 4.1
+    contador = 0
+    for n in nota:
+        if n >= 85:
+            contador += 1
+        else:
+            print("Dato inválido, intente de nuevo")
 
-
+    print(f"Hay {contador} promedios mayores o iguales a 85")
+def zona_riesgo(nota):
+    contador = 0
+    for n in nota:
+        if n in nota:
+            if n < 60:
+                contador += 1
+            else:
+                print("Dato inválido, intente de nuevo")
+    print(f"Hay {contador} promedios en zona de riesgo")
+# Inicio opcion 5
+def numero_mayor(numeros):
+    maximo = max(numeros)
+    print(f"El número máximo es {maximo}")
+def numero_menor(numeros):
+    minimo = min(numeros)
+    print(f"El número minimo es {minimo}")
+def cuantos_repiten(numeros):
+    maximo = max(numeros)
+    minimo = min(numeros)
+    for n in range(0, numeros):
+        if n == maximo:
