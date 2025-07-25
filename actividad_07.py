@@ -31,8 +31,8 @@ def multiplos_3(numero): # 1.3
 # Inicio funciones opcion 2
 def area(base, altura): # 2.1
     return base * altura
-def perimetro(l1,l2, l3, l4 ): # 2.2
-    return l1 + l2 + l3 + l4
+def perimetro(a,b ): # 2.2
+    return (a * 2) + (b * 2)
 # Inicio opcion 3
 def es_primo(numero):
     if numero < 2:
@@ -59,8 +59,6 @@ def zona_riesgo(nota):
         if n in nota:
             if n < 60:
                 contador += 1
-            else:
-                print("Dato inválido, intente de nuevo")
     print(f"Hay {contador} promedios en zona de riesgo")
 # Inicio opcion 5
 def numero_mayor(numeros):# 5.1
@@ -103,7 +101,7 @@ while True:
         case "1":
             numeros = []
             while True:
-                numero = float(input("Ingresa los números que deseas evaluar, ingresa 0 si ya NO deseas ingresar más números: "))
+                numero = input("Ingresa los números que deseas evaluar, ingresa 0 si no quieres ingresar más números: ")
                 if numero != 0:
                     numeros.append(numero)
                 elif numero == 0:
@@ -112,6 +110,57 @@ while True:
             print(f"El promedio total es de: {promedio(numeros)}")
             positivos_negativos(numeros)
             multiplos_3(numero)
-        case []
+        case "2":
+            a = int(input("Ingresa la área del rectángulo: "))
+            b = int(input("Ingresa la base del rectángulo: "))
+
+            print(f"El area del rectangulo es de {area(a,b)}")
+            print(f"El perimetro del rectangulo es de {perimetro(a,b)}")
+
+        case "3":
+            numeros = []
+            while True:
+                numero = int(input("Ingresa los números que deseas evaluar, ingresa 0 si no quieres ingresar más números: "))
+                if numero != 0:
+                    numeros.append(numero)
+                elif numero == 0:
+                    break
+                else:
+                    print("Dato inválido, intente de nuevo")
+            es_primo(numeros)
+
+        case "4":
+            notas = []
+            while True:
+                nota = int(input("Ingresa las calificaciones que deseas evaluar, ingresa 0 si no quieres ingresar más datos: "))
+                if nota != 0:
+                    notas.append(nota)
+                elif nota == 0:
+                    break
+            print(f"El promedio es de: {promedios_(notas)}")
+            promedio_mayor(notas)
+            zona_riesgo(notas)
+        case "5":
+            enteros = []
+            while True:
+                numero = int(input("Ingresa los números que deseas evaluar, ingresa 0 si no quieres ingresar más números: "))
+                if numero != 0:
+                    enteros.append(numero)
+                elif numero == 0:
+                    break
+                else:
+                    print("Dato inválido, intente de nuevo")
+            numero_menor(enteros)
+            numero_mayor(enteros)
+
+        case "6":
+             primer_dato = float(input("Ingresa el primer dato a evaluar: "))
+             segundo_dato = float(input("Ingresa el segundo dato a evaluar: "))
+             if primer_dato and segundo_dato > 0:
+                 print(f"Total suma: {suma(primer_dato,segundo_dato)}")
+                 print(f"Total resta: {resta(primer_dato, segundo_dato)}")
+                 print(f"Total multiplicación: {multiplicacion(primer_dato, segundo_dato)}")
+                 print(f"Total división: {division(primer_dato, segundo_dato)}")
+
         case "7":
             break
